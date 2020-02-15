@@ -454,6 +454,17 @@ CREATE TABLE IF NOT EXISTS `vouchers` (
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `coming_soon_email`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `coming_soon_email` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(45) NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `plugins`

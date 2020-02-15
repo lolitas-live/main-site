@@ -2,7 +2,7 @@
 
 global $global, $config;
 
-Class Voucher {
+class Voucher {
 
   private $code;
   private $amount;
