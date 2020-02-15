@@ -14,9 +14,10 @@ Class Voucher {
 		return $coupon;
 	}
 
+  $amount = 5;
 	$res = generateCode(10);
 
   $sql = "INSERT INTO vouchers (code, amount, created, modified) "
-        . " VALUES ($res, 5, now(), now(), ";
+        . " VALUES ($res, $amount, now(), now(), ";
 
 }
