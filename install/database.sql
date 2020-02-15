@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   PRIMARY KEY (`id`),
   INDEX `fk_categories_users1_idx` (`users_id` ASC),
   INDEX `clean_name_INDEX2` (`clean_name` ASC),
-  UNIQUE INDEX `clean_name_UNIQUE` (`clean_name` ASC), 
+  UNIQUE INDEX `clean_name_UNIQUE` (`clean_name` ASC),
   CONSTRAINT `fk_categories_users1`
     FOREIGN KEY (`users_id`)
     REFERENCES `users` (`id`)
@@ -442,6 +442,18 @@ CREATE TABLE IF NOT EXISTS `playlists_has_videos` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `vouchers`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vouchers` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `code` VARCHAR(45) NOT NULL,
+  `amount` INT NOT NULL,
+  `created` DATETIME NOT NULL,
+  `modified` DATETIME NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `plugins`
@@ -499,10 +511,10 @@ CREATE TABLE `category_type_cache` (
 ALTER TABLE `category_type_cache`
   ADD UNIQUE KEY `categoryId` (`categoryId`);
 
-ALTER TABLE `plugins` 
+ALTER TABLE `plugins`
 ADD INDEX `plugin_status` (`status` ASC);
 
-ALTER TABLE `videos` 
+ALTER TABLE `videos`
 ADD INDEX `videos_status_index` (`status` ASC),
 ADD INDEX `is_suggested_index` (`isSuggested` ASC),
 ADD INDEX `views_count_index` (`views_count` ASC),
