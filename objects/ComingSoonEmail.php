@@ -51,4 +51,6 @@ if (saveData()) {
   echo "<script>console.log('this is the code: " . $code . "' );</script>";
   //send email with code
   emailVoucher($email, $code);
+} else {
+  echo "<script>console.log('saved data not true');</script>";
 }
