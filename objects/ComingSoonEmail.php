@@ -1,6 +1,9 @@
 <?php
 
 global $global, $config;
+if (!isset($global['systemRootPath'])) {
+    require_once dirname(__FILE__) . '/../videos/configuration.php';
+}
 
 function saveData() {
   // Check if the form is submitted
