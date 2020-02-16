@@ -3,9 +3,6 @@ global $global, $config;
 if (!isset($global['systemRootPath'])) {
     require_once dirname(__FILE__) . '/videos/configuration.php';
 }
-
-require_once $global['systemRootPath'] . 'objects/ComingSoonEmail.php';
-
 ?>
 
 <!DOCTYPE html>
