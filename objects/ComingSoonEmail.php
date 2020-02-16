@@ -12,14 +12,11 @@ function saveData() {
 
     // retrieve the form data by using the element's name attributes value as key
     $email = $_REQUEST['email'];
-    echo "<script>console.log('Email: " . $email . "' );</script>";
-    $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES ($email, now(), now())";
+    $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
+    . "(?, now(), now())";
     echo "<script>console.log('SQL statement: " . $sql . "' );</script>";
-    $resp = sqlDAL::writeSql($sql, "s");
-    echo("<script>console.log('got here post sqlDAL');</script>");
+    sqlDAL::writeSql($sql, "s", array(xss_esc($email)));
   }
-  echo "<script>console.log('Response: " . $resp . "' );</script>";
-  return $resp;
 }
 
 saveData();
