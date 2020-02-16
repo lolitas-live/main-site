@@ -122,6 +122,7 @@ function saveData() {
 }
 saveData();
 ?>
+<?php else: ?>
 <div class="bgimg">
   <div class="topleft">
     <p>Lolitas LIVE</p>
