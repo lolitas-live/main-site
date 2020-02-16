@@ -16,7 +16,7 @@ function saveData() {
 
     function checkEmail() {
       $sql = "SELECT * FROM `coming_soon_email` WHERE email = '{$email}' ";
-      $res = sqlDAL::readSql($sql));
+      $res = sqlDAL::readSql($sql);
       $data = sqlDAL::fetchAssoc($res);
       sqlDAL::close($res);
       if ($data != false) {
