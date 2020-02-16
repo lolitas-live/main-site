@@ -25,7 +25,7 @@ function saveData() {
         sqlDAL::writeSql($sql, "s", array(xss_esc($email)));
         echo "<h1>Thanks for registering, " . $email . "!</h1><p>You will receive
         an email with a free credit code soon. We'll also let you know when the
-        site is up to redeem your code. Contat us: hello@lolitas.live";
+        site is up to redeem your code. Contact us: hello@lolitas.live";
       }
     }
   }
