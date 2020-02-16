@@ -113,7 +113,7 @@ hr {
     <h1>COMING SOON</h1>
     <p style="margin-top: 20px;">60 days left</p>
   </div>
-  <form action="objects/ComingSoonEmail.php" metod="post">
+  <form action="ComingSoonEmail" metod="post">
     <div class="form__group field middle" style="width: 21em!important; color: white!important">
        <br/>
        <input type="email" id="email" name="email" class="form__field" placeholder="Enter your email here for 5 free credits" required />
