@@ -1,7 +1,7 @@
 <?php
 global $global, $config;
 if (!isset($global['systemRootPath'])) {
-    require_once dirname(__FILE__) . '/../videos/configuration.php';
+    require_once dirname(__FILE__) . '/videos/configuration.php';
 }
 
 ?>
@@ -142,6 +142,6 @@ saveData();
     <p>Enter your email above for free credits</p>
   </div>
 </div>
-<?php endif; ?> 
+<?php endif; ?>
 </body>
 </html>
