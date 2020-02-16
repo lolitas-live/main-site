@@ -11,7 +11,7 @@ require_once $global['systemRootPath'] . 'objects/PHPMailer/src/SMTP.php';
 require_once $global['systemRootPath'] . 'objects/PHPMailer/src/Exception.php';
 
 
-function emailVoucher($email, $code) {
+function sendEmail($email, $code) {
   $mail = new PHPMailer;
   //Enable SMTP debugging.
   $mail->SMTPDebug = 3;
@@ -53,59 +53,46 @@ function emailVoucher($email, $code) {
   }
 }
 
-function sendEmail() {
-  if (handleEmail()) {
-    $email = $_REQUEST['email'];
-    $sql = "SELECT * FROM `vouchers` WHERE user_email = '{$email}' ";
-    $res = sqlDAL::readSql($sql);
-    $data = sqlDAL::fetchAssoc($res);
-    sqlDAL::close($res);
+function getAssignedCode($email) {
+  $sql = "SELECT * FROM `vouchers` WHERE user_email = '{$email}' ";
+  $res = sqlDAL::readSql($sql);
+  $data = sqlDAL::fetchAssoc($res);
+  sqlDAL::close($res);
+  if ($data != false) {
     $code = $data['code'];
-    echo "<script>console.log('this is the code: " . $code . "' );</script>";
+    echo "<script>console.log('code to email: " . $code . "' );</script>";
     //send email with code
-    emailVoucher($email, $code);
+    sendEmail($email, $code);
   } else {
-    echo "<script>console.log('handle email not true');</script>";
+    echo "<script>console.log('row not found');</script>";
   }
-  return;
 }
 
-function saveData() {
+function handleSubmit() {
   global $global;
 
   // Check if the form is submitted
   if (isset($_POST['submit'])) {
+    $email = $_REQUEST['email'];
+    $sql = "SELECT * FROM `coming_soon_email` WHERE email = '{$email}' ";
+    $res = sqlDAL::readSql($sql);
+    $data = sqlDAL::fetchAssoc($res);
+    sqlDAL::close($res);
 
-    function handleEmail() {
-      $email = $_REQUEST['email'];
-      $sql = "SELECT * FROM `coming_soon_email` WHERE email = '{$email}' ";
-      $res = sqlDAL::readSql($sql);
-      $data = sqlDAL::fetchAssoc($res);
-      sqlDAL::close($res);
-      if ($data != false) {
-        echo "<h1>EMAIL: " . $email . " already exists!</h1><p>We'll let you know when the
-        site is up to redeem your code. Contact us: hello@lolitas.live</p>";
-
-        return false;
-
-      } else {
-        $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
-        . "(?, now(), now())";
-        sqlDAL::writeSql($sql, "s", array(xss_esc($email)));
-
-        //create code and store against email
-        saveCode($email);
-
-        echo "<h1>Thanks for registering, " . $email . "!</h1><p>You will receive
-        an email with a free credit code soon. We'll also let you know when the
-        site is up to redeem your code. Contact us: hello@lolitas.live";
-
-        return true;
-
-      }
+    // Check email exists
+    if ($data != false) {
+      echo "<h1>EMAIL: " . $email . " already exists!</h1><p>We'll let you know when the
+      site is up to redeem your code. Contact us: hello@lolitas.live</p>";
+    } else {
+      $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
+      . "(?, now(), now())";
+      sqlDAL::writeSql($sql, "s", array(xss_esc($email)));
+      //if email exists, create code and store against it
+      assignCode($email);
+      echo "<h1>Thanks for registering, " . $email . "!</h1><p>You will receive
+      an email with a free credit code soon. We'll also let you know when the
+      site is up to redeem your code. Contact us: hello@lolitas.live";
     }
   }
-  handleEmail();
 }
-saveData();
-sendEmail();
+handleSubmit();

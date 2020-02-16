@@ -7,10 +7,11 @@ function generateCode($l){
 	return $coupon;
 }
 
-function saveCode($email) {
+function assignCode($email) {
   $amount = 5;
 	$res = generateCode(10);
   $sql = "INSERT INTO `vouchers` (`code`, `amount`, `user_email`, `created`, `modified`) VALUES "
   . "(?, ?, ?, now(), now())";
   sqlDAL::writeSql($sql, "sis", array(xss_esc($res), $amount, xss_esc($email)));
+  getAssignedCode($email);
 }
