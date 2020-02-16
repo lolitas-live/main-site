@@ -3,8 +3,7 @@ global $global, $config;
 if (!isset($global['systemRootPath'])) {
     require_once dirname(__FILE__) . '/videos/configuration.php';
 }
-echo("<script>console.log("got here preprepre");</script>");
-
+echo("<script>console.log('got here');</script>");
 ?>
 
 <!DOCTYPE html>
