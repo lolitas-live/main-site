@@ -134,8 +134,6 @@ echo("<script>console.log('got here end');</script>");
   </div>
   <div class="middle">
     <h1>COMING SOON</h1>
-    <p style="margin-top: 20px;">60 days left</p>
-  </div>
     <div class="form__group field middle" style="width: 21em!important; color: white!important">
       <form action="comingsoon.php" metod="post">
          <br/>
@@ -144,7 +142,8 @@ echo("<script>console.log('got here end');</script>");
          <input type="submit">
       </form>
     </div>
-  </form>
+    <p style="margin-top: 20px;">60 days left</p>
+  </div>
   <div class="bottomleft">
     <p>Enter your email above for free credits</p>
   </div>
