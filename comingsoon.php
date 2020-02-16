@@ -108,9 +108,12 @@ hr {
 
 </style>
 <body>
-<?php if (isset($_POST['form_submitted'])):
+<?php
+  console.log("got here prepre");
+
+  if (isset($_POST['form_submitted'])):
   console.log("got here beginning");
-function saveData() {
+  function saveData() {
   // Check if the form is submitted
   if ( isset( $_POST['submit'] ) ) {
     // retrieve the form data by using the element's name attributes value as key
