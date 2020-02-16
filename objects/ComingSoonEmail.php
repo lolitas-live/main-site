@@ -7,6 +7,10 @@ if (!isset($global['systemRootPath'])) {
 echo("<script>console.log('got here pre-isset');</script>");
 function saveData() {
   echo("<script>console.log('got here saveData');</script>");
+  // Check there is a post
+  if (empty($_POST)) {
+    echo("<script>console.log('got here Post is empty');</script>");
+  }
   // Check if the form is submitted
   if (isset($_POST['submit'])) {
     echo("<script>console.log('got here isset');</script>");
