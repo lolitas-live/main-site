@@ -108,6 +108,7 @@ hr {
 </style>
 <body>
 <?php
+  echo("<script>console.log('got here pre isset');</script>");
   if (isset($_POST['form_submitted'])):
     echo("<script>console.log('got isset');</script>");
   function saveData() {
