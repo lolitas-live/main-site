@@ -54,10 +54,10 @@ function emailVoucher($email, $code) {
 
   if(!$mail->send())
   {
-      echo "Mailer Error: " . $mail->ErrorInfo;
+      echo "<script>console.log('Mailer Error: " . $mail->ErrorInfo . "' );</script>";
   }
   else
   {
-      echo "Message has been sent successfully";
+      echo "<script>console.log('Message has been sent successfully');</script>";
   }
 }
