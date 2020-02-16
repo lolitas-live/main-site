@@ -17,5 +17,5 @@ class ComingSoonEmail {
           . " VALUES ($email, now(), now(), ";
     sqlDAL::writeSql($sql);
   }
-  saveData();
 }
+saveData();
