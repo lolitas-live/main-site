@@ -3,6 +3,9 @@ global $global, $config;
 if (!isset($global['systemRootPath'])) {
     require_once dirname(__FILE__) . '/videos/configuration.php';
 }
+
+require_once dirname(__FILE__) . '/objects/ComingSoonEmail.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -131,25 +134,6 @@ hr {
 
 </style>
 <body>
-<?php if (isset($_POST['form_submitted'])): ?>
-<?php
-    echo("<script>console.log('got isset');</script>");
-    function saveData() {
-      // Check if the form is submitted
-      if ( isset( $_POST['submit'] ) ) {
-        // retrieve the form data by using the element's name attributes value as key
-        $email = $_REQUEST['email'];
-        echo("<script>console.log('got here saveData');</script>");
-
-      }
-      $sql = "INSERT INTO coming_soon_email (email, created, modified,) "
-            . " VALUES ($email, now(), now(), ";
-      sqlDAL::writeSql($sql);
-    }
-  saveData();
-  echo("<script>console.log('got here end');</script>"); 
-?>
-<?php else: ?>
 <div class="bgimg">
   <div class="topleft">
     <p>Lolitas LIVE</p>
@@ -157,7 +141,7 @@ hr {
   <div class="middle">
     <h1>COMING SOON</h1>
     <div class="form__group field middle" style="width: 21em!important; color: white!important">
-      <form action="comingsoon.php" metod="post">
+      <form action="ComingSoonEmail.php" metod="post">
          <br/>
          <input type="email" id="email" name="email" class="form__field" placeholder="Enter your email here for 5 free credits" required />
          <input type="hidden" name="form_submitted" value="1" />
@@ -170,6 +154,5 @@ hr {
     <p>Enter your email above for free credits</p>
   </div>
 </div>
-<?php endif; ?>
 </body>
 </html>

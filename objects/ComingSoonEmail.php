@@ -14,7 +14,7 @@ function saveData() {
 
   $sql = "INSERT INTO coming_soon_email (email, created, modified,) "
         . " VALUES ($email, now(), now(), ";
-  sqlDAL::writeSql($sql);
+  sqlDAL::writeSql($sql, "s");
 }
 
 saveData();
