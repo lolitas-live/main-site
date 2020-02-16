@@ -30,7 +30,7 @@ function saveData() {
           echo "<script>console.log('RES is empty' );</script>";
         }
       }
-    }
+
 
     $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
     . "(?, now(), now())";
