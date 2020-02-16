@@ -8,7 +8,7 @@ if (!isset($global['systemRootPath'])) {
 require_once $global['systemRootPath'] . 'objects/Vouchers.php';
 
 function sendEmail() {
-  if (saveData()) {
+  if (handleEmail() != 0) {
     $email = $_REQUEST['email'];
     $sql = "SELECT * FROM `vouchers` WHERE user_email = '{$email}' ";
     $res = sqlDAL::readSql($sql);
@@ -19,7 +19,7 @@ function sendEmail() {
     //send email with code
     emailVoucher($email, $code);
   } else {
-    echo "<script>console.log('saved data not true');</script>";
+    echo "<script>console.log('handle email not true');</script>";
   }
 }
 
@@ -38,6 +38,9 @@ function saveData() {
       if ($data != false) {
         echo "<h1>EMAIL: " . $email . " already exists!</h1><p>We'll let you know when the
         site is up to redeem your code. Contact us: hello@lolitas.live</p>";
+
+        return false;
+
       } else {
         $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
         . "(?, now(), now())";
@@ -49,11 +52,13 @@ function saveData() {
         echo "<h1>Thanks for registering, " . $email . "!</h1><p>You will receive
         an email with a free credit code soon. We'll also let you know when the
         site is up to redeem your code. Contact us: hello@lolitas.live";
+
+        return true;
+
       }
     }
   }
   handleEmail();
-  return true;
 }
 saveData();
 sendEmail();
