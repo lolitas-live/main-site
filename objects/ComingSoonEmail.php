@@ -6,6 +6,7 @@ if (!isset($global['systemRootPath'])) {
 }
 
 function saveData() {
+  global $global;
   // Check if the form is submitted
   if (isset($_POST['submit'])) {
 
