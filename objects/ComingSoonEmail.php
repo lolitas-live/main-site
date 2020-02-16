@@ -15,12 +15,12 @@ function saveData() {
     $email = $_REQUEST['email'];
 
     function checkEmail() {
-      $sql = "SELECT * FROM `coming_soon_email` WHERE email = ?";
-      $res = sqlDAL::readSql($sql, "s", array(xss_esc($email)));
+      $sql = "SELECT * FROM `coming_soon_email` WHERE email = '{$email}' ";
+      $res = sqlDAL::readSql($sql));
       $data = sqlDAL::fetchAssoc($res);
       sqlDAL::close($res);
       if ($data != false) {
-        echo "<script>console.log('Email already exists: " . $res . "' );</script>";
+        echo "<script>console.log('data is not false: " . $data . "' );</script>";
       } else {
         $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
         . "(?, now(), now())";
