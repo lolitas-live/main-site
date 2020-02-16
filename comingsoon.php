@@ -142,7 +142,7 @@ hr {
          <br/>
          <input type="email" id="email" name="email" class="form__field" placeholder="Enter your email here for 5 free credits" required />
          <input type="hidden" name="form_submitted" value="1" />
-         <input type="submit">
+         <input type="submit" name="submit">
       </form>
     </div>
     <p style="margin-top: 20px;">60 days left</p>
