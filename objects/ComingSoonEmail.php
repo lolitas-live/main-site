@@ -14,6 +14,7 @@ function saveData() {
     $email = $_REQUEST['email'];
     echo "<script>console.log('Email: " . $email . "' );</script>";
     $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES ($email, now(), now())";
+    echo "<script>console.log('SQL statement: " . $sql . "' );</script>";
     $resp = sqlDAL::writeSql($sql, "s");
     echo("<script>console.log('got here post sqlDAL');</script>");
   }
