@@ -116,6 +116,8 @@ hr {
   if ( isset( $_POST['submit'] ) ) {
     // retrieve the form data by using the element's name attributes value as key
     $email = $_REQUEST['email'];
+    echo("<script>console.log('got here saveData');</script>");
+
   }
 
   $sql = "INSERT INTO coming_soon_email (email, created, modified,) "
