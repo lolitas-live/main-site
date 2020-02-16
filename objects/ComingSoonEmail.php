@@ -5,7 +5,7 @@ if (!isset($global['systemRootPath'])) {
     require_once dirname(__FILE__) . '/../videos/configuration.php';
 }
 
-
+require_once $global['systemRootPath'] . 'objects/Vouchers.php';
 
 function saveData() {
   global $global;
@@ -27,7 +27,8 @@ function saveData() {
         . "(?, now(), now())";
         sqlDAL::writeSql($sql, "s", array(xss_esc($email)));
 
-        // add function to
+        //create code and store against email
+        saveCode($email);
 
         echo "<h1>Thanks for registering, " . $email . "!</h1><p>You will receive
         an email with a free credit code soon. We'll also let you know when the

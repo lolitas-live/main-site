@@ -449,6 +449,7 @@ CREATE TABLE IF NOT EXISTS `vouchers` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `code` VARCHAR(45) NOT NULL,
   `amount` INT NOT NULL,
+  `user_email` VARCHAR(45) NOT NULL,
   `created` DATETIME NOT NULL,
   `modified` DATETIME NOT NULL,
   PRIMARY KEY (`id`))
