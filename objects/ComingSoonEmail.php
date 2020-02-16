@@ -23,7 +23,7 @@ function sendEmail($email, $code) {
   //Set this to true if SMTP host requires authentication to send email
   $mail->SMTPAuth = true;
   //Provide username and password
-  $mail->Username = "lolitas-website";
+  $mail->Username = "juan@lolitas.live";
   $mail->Password = "wlwjfywypfcqdlnk";
   //If SMTP requires TLS encryption then set it
   $mail->SMTPSecure = "tls";
