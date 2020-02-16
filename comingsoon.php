@@ -1,6 +1,9 @@
 <?php
-global $global;
-require_once $global['systemRootPath'].'objects/ComingSoonEmail.php';
+global $global, $config;
+if (!isset($global['systemRootPath'])) {
+    require_once dirname(__FILE__) . '/../videos/configuration.php';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +108,20 @@ hr {
 
 </style>
 <body>
+<?php if (isset($_POST['form_submitted'])):
+function saveData() {
+  // Check if the form is submitted
+  if ( isset( $_POST['submit'] ) ) {
+    // retrieve the form data by using the element's name attributes value as key
+    $email = $_REQUEST['email'];
+  }
 
+  $sql = "INSERT INTO coming_soon_email (email, created, modified,) "
+        . " VALUES ($email, now(), now(), ";
+  sqlDAL::writeSql($sql);
+}
+saveData();
+?>
 <div class="bgimg">
   <div class="topleft">
     <p>Lolitas LIVE</p>
@@ -114,10 +130,11 @@ hr {
     <h1>COMING SOON</h1>
     <p style="margin-top: 20px;">60 days left</p>
   </div>
-  <form action="objects/ComingSoonEmail.php" metod="post">
+  <form action="comingsoon.php" metod="post">
     <div class="form__group field middle" style="width: 21em!important; color: white!important">
        <br/>
        <input type="email" id="email" name="email" class="form__field" placeholder="Enter your email here for 5 free credits" required />
+       <input type="hidden" name="form_submitted" value="1" />
        <input type="submit">
     </div>
   </form>
