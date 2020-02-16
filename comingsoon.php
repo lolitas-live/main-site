@@ -13,6 +13,30 @@ body, html {
   margin: 0;
 }
 
+input[type="submit"] {
+  color: #444444;
+  background: #F3F3F3;
+  border: 1px #DADADA solid;
+  padding: 5px 10px;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 9pt;
+  outline: none;
+  margin-top: 10px;
+}
+
+input:hover[type="submit"] {
+  border: 1px #C6C6C6 solid;
+  box-shadow: 1px 1px 1px #EAEAEA;
+  color: #333333;
+  background: #F7F7F7;
+}
+
+input:active[type="submit"] {
+  box-shadow: inset 1px 1px 1px #DFDFDF;
+}
+
+
 .bgimg {
   background-image: url('/img/coming_soon.jpg');
   height: 100%;
