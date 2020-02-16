@@ -5,6 +5,8 @@ if (!isset($global['systemRootPath'])) {
     require_once dirname(__FILE__) . '/../videos/configuration.php';
 }
 
+
+
 function saveData() {
   global $global;
 
@@ -18,11 +20,15 @@ function saveData() {
       $data = sqlDAL::fetchAssoc($res);
       sqlDAL::close($res);
       if ($data != false) {
-        echo "<h1>EMAIL: " . $email . " already exists!</h1>";
+        echo "<h1>EMAIL: " . $email . " already exists!</h1><p>We'll let you know when the
+        site is up to redeem your code. Contact us: hello@lolitas.live</p>";
       } else {
         $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
         . "(?, now(), now())";
         sqlDAL::writeSql($sql, "s", array(xss_esc($email)));
+
+        // add function to
+
         echo "<h1>Thanks for registering, " . $email . "!</h1><p>You will receive
         an email with a free credit code soon. We'll also let you know when the
         site is up to redeem your code. Contact us: hello@lolitas.live";
