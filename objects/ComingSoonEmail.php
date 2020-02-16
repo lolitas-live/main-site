@@ -17,7 +17,9 @@ function saveData() {
     function checkEmail() {
       $sql = "SELECT * FROM `coming_soon_email` WHERE email = ?;";
       $res = sqlDAL::readSql($sql, "s", array(xss_esc($email)));
-      echo "<script>console.log('Response: " . $res . "' );</script>";
+      $result = sqlDAL::fetchAssoc($res);
+      sqlDAL::close($res);
+      echo "<script>console.log('Response: " . $result . "' );</script>";
     }
 
     $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
