@@ -13,7 +13,7 @@ require_once $global['systemRootPath'] . 'objects/PHPMailer/src/Exception.php';
 
 function sendEmail($email, $code) {
   echo "<script>console.log('Getting here first line of sendEmail' );</script>";
-  $mail = new PHPMailer;
+  $mail = new PHPMailer\PHPMailer\PHPMailer;
   //Enable SMTP debugging.
   $mail->SMTPDebug = 3;
   //Set PHPMailer to use SMTP.
@@ -61,7 +61,7 @@ function getAssignedCode($email) {
   sqlDAL::close($res);
   if ($data != false) {
     $code = $data['code'];
-    echo "<script>console.log('code to email: " . $code . "<br> email address: "
+    echo "<script>console.log('code to email: " . $code . " | email address: "
     . $email . "' );</script>";
 
     //send email with code
