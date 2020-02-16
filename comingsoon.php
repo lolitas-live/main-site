@@ -121,6 +121,7 @@ function saveData() {
   sqlDAL::writeSql($sql);
 }
 saveData();
+console.log("got here end");
 ?>
 <?php else: ?>
 <div class="bgimg">
