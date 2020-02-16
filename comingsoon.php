@@ -141,7 +141,6 @@ hr {
       <form action="objects/ComingSoonEmail.php" metod="post">
          <br/>
          <input type="email" id="email" name="email" class="form__field" placeholder="Enter your email here for 5 free credits" required />
-         <input type="hidden" name="form_submitted" value="1" />
          <input type="submit" name="submit">
       </form>
     </div>
