@@ -7,6 +7,22 @@ if (!isset($global['systemRootPath'])) {
 
 require_once $global['systemRootPath'] . 'objects/Vouchers.php';
 
+function sendEmail() {
+  if (saveData()) {
+    $email = $_REQUEST['email'];
+    $sql = "SELECT * FROM `vouchers` WHERE user_email = '{$email}' ";
+    $res = sqlDAL::readSql($sql);
+    $data = sqlDAL::fetchAssoc($res);
+    sqlDAL::close($res);
+    $code = $data['code'];
+    echo "<script>console.log('this is the code: " . $code . "' );</script>";
+    //send email with code
+    emailVoucher($email, $code);
+  } else {
+    echo "<script>console.log('saved data not true');</script>";
+  }
+}
+
 function saveData() {
   global $global;
 
@@ -40,17 +56,4 @@ function saveData() {
   return true;
 }
 saveData();
-
-if (saveData()) {
-  $email = $_REQUEST['email'];
-  $sql = "SELECT * FROM `vouchers` WHERE user_email = '{$email}' ";
-  $res = sqlDAL::readSql($sql);
-  $data = sqlDAL::fetchAssoc($res);
-  sqlDAL::close($res);
-  $code = $data['code'];
-  echo "<script>console.log('this is the code: " . $code . "' );</script>";
-  //send email with code
-  emailVoucher($email, $code);
-} else {
-  echo "<script>console.log('saved data not true');</script>";
-}
+sendEmail();
