@@ -1,6 +1,7 @@
 <?php
 global $global;
 require_once $global['systemRootPath'].'objects/ComingSoonEmail.php';
+?>
 
 <!DOCTYPE html>
 <html>
