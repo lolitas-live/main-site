@@ -3,7 +3,6 @@ global $global, $config;
 if (!isset($global['systemRootPath'])) {
     require_once dirname(__FILE__) . '/videos/configuration.php';
 }
-echo("<script>console.log('got here');</script>");
 ?>
 
 <!DOCTYPE html>
@@ -109,10 +108,8 @@ hr {
 </style>
 <body>
 <?php
-  console.log("got here prepre");
-
   if (isset($_POST['form_submitted'])):
-  console.log("got here beginning");
+    echo("<script>console.log('got isset');</script>");
   function saveData() {
   // Check if the form is submitted
   if ( isset( $_POST['submit'] ) ) {
@@ -125,7 +122,7 @@ hr {
   sqlDAL::writeSql($sql);
 }
 saveData();
-console.log("got here end");
+echo("<script>console.log('got here end');</script>");
 ?>
 <?php else: ?>
 <div class="bgimg">
