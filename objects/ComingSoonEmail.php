@@ -54,7 +54,7 @@ function emailVoucher($email, $code) {
 }
 
 function sendEmail() {
-  if (handleEmail() = 1) {
+  if (handleEmail()) {
     $email = $_REQUEST['email'];
     $sql = "SELECT * FROM `vouchers` WHERE user_email = '{$email}' ";
     $res = sqlDAL::readSql($sql);
@@ -86,7 +86,7 @@ function saveData() {
         echo "<h1>EMAIL: " . $email . " already exists!</h1><p>We'll let you know when the
         site is up to redeem your code. Contact us: hello@lolitas.live</p>";
 
-        return 0;
+        return false;
 
       } else {
         $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
@@ -100,7 +100,7 @@ function saveData() {
         an email with a free credit code soon. We'll also let you know when the
         site is up to redeem your code. Contact us: hello@lolitas.live";
 
-        return 1;
+        return true;
 
       }
     }
