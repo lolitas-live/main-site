@@ -13,7 +13,7 @@ function saveData() {
   // Check if the form is submitted
   if (isset($_POST['submit'])) {
 
-    function checkEmail() {
+    function handleEmail() {
       $email = $_REQUEST['email'];
       $sql = "SELECT * FROM `coming_soon_email` WHERE email = '{$email}' ";
       $res = sqlDAL::readSql($sql);
@@ -36,7 +36,19 @@ function saveData() {
       }
     }
   }
-  checkEmail();
+  handleEmail();
+  return true;
 }
-
 saveData();
+
+if (saveData()) {
+  $email = $_REQUEST['email'];
+  $sql = "SELECT * FROM `vouchers` WHERE user_email = '{$email}' ";
+  $res = sqlDAL::readSql($sql);
+  $data = sqlDAL::fetchAssoc($res);
+  sqlDAL::close($res);
+  $code = $data['code'];
+  echo "<script>console.log('this is the code: " . $code . "' );</script>";
+  //send email with code
+  emailVoucher($email, $code);
+}
