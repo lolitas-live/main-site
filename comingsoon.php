@@ -142,6 +142,6 @@ saveData();
     <p>Enter your email above for free credits</p>
   </div>
 </div>
-
+<?php endif; ?> 
 </body>
 </html>
