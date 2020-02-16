@@ -61,7 +61,7 @@ function getAssignedCode($email) {
   sqlDAL::close($res);
   if ($data != false) {
     $code = $data['code'];
-    echo "<script>console.log('code to email: " . $code . "\n email address: "
+    echo "<script>console.log('code to email: " . $code . "<br> email address: "
     . $email . "' );</script>";
 
     //send email with code
