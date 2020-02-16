@@ -2,9 +2,6 @@
 
 global $global, $config;
 
-
-private $email;
-
 function saveData() {
   // Check if the form is submitted
   if ( isset( $_POST['submit'] ) ) {
