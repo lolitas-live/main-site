@@ -18,7 +18,7 @@ function saveData() {
       $data = sqlDAL::fetchAssoc($res);
       sqlDAL::close($res);
       if ($data != false) {
-        echo "<script>console.log('data is not false: " . $data . "' );</script>";
+        echo "<h1>EMAIL: " . $email . "' already exists!</h1>";
       } else {
         $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
         . "(?, now(), now())";
