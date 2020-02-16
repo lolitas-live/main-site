@@ -109,6 +109,7 @@ hr {
 </style>
 <body>
 <?php if (isset($_POST['form_submitted'])):
+  console.log("got here beginning");
 function saveData() {
   // Check if the form is submitted
   if ( isset( $_POST['submit'] ) ) {
