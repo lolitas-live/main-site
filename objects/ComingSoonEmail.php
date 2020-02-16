@@ -17,6 +17,7 @@ function saveData() {
     $resp = sqlDAL::writeSql($sql, "s");
     echo("<script>console.log('got here post sqlDAL');</script>");
   }
+  echo "<script>console.log('Response: " . $resp . "' );</script>";
   return $resp;
 }
 
