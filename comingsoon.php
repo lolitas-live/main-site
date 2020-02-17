@@ -21,7 +21,7 @@ if (!isset($global['systemRootPath'])) {
     <div class="form__group field middle" style="width: 21em!important; color: white!important">
       <form action="objects/ComingSoonEmail.php" method="post">
          <br/>
-         <input type="email" id="email" name="email" class="form__field" placeholder="Enter your email here for 5 free credits" required />
+         <input type="email" id="email" name="email" class="form__field" placeholder="Enter email for free credits" required />
          <input type="submit" name="submit">
       </form>
     </div>
