@@ -25,7 +25,7 @@ if (!isset($global['systemRootPath'])) {
          <input type="submit" name="submit">
       </form>
     </div>
-    <p style="margin-top: 20px;">60 days left</p>
+    <p>60 days left</p>
   </div>
   <div class="bottomleft">
     <p>Enter your email above for free credits</p>
