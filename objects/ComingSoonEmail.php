@@ -16,6 +16,8 @@ function sendEmail($email, $code) {
   //Set PHPMailer to use SMTP.
   $mail->isSMTP();
   setSiteSendMessage($mail);
+  $mail->From = "hello@lolitas.live";
+  $mail->FromName = "Lolitas Live";
   $mail->addAddress($email);
   $mail->isHTML(true);
   $mail->Subject = "Your free credit is here!";
