@@ -55,7 +55,11 @@ Options All -Indexes
     RewriteEngine on
 
     #main Files
-    RewriteRule    ^index.php$ /comingsoon.php    [NC,L,R=302]
+    #RewriteCond %{REMOTE_ADDR} !^123\.456\.789\.000
+    RewriteCond %{REQUEST_URI} !/comingsoon.php$ [NC]
+    RewriteCond %{REQUEST_URI} !\.(jpe?g?|png|gif) [NC]
+    RewriteRule .* /comingnsoon.php [R=302,L]
+    #RewriteRule    ^index.php$ /comingsoon.php    [NC,L,R=302]
     #RewriteRule    ^index.php$ /comingsoon.php    [NC,L,R=302]
     #RewriteRule    ^$ view/    [NC,L]
     RewriteRule    ^bootstrap/(.+)$ view/bootstrap/$1 [NC,L]
