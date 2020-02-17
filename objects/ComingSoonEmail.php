@@ -15,25 +15,9 @@ function sendEmail($email, $code) {
   $mail = new PHPMailer\PHPMailer\PHPMailer;
   //Set PHPMailer to use SMTP.
   $mail->isSMTP();
-  //Set SMTP host name
-  $mail->Host = "smtp.gmail.com";
-  //Set this to true if SMTP host requires authentication to send email
-  $mail->SMTPAuth = true;
-  //Provide username and password
-  $mail->Username = "juan@lolitas.live";
-  $mail->Password = "***REMOVED***";
-  //If SMTP requires TLS encryption then set it
-  $mail->SMTPSecure = "tls";
-  //Set TCP port to connect to
-  $mail->Port = 587;
-
-  $mail->From = "hello@lolitas.live";
-  $mail->FromName = "Lolitas Live";
-
+  setSiteSendMessage($mail);
   $mail->addAddress($email);
-
   $mail->isHTML(true);
-
   $mail->Subject = "Your free credit is here!";
   $mail->Body = "<h1>Save the code below</h1><p>When the site is live we will
                 email you again with a link to sign up and redeem your code</p>
