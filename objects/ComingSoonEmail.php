@@ -78,7 +78,7 @@ function handleSubmit() {
         <div class=\"middle\">
           <h1>Email: " . $email . " already exists!</h1>
           <p>We'll let you know when the
-          site is up to redeem your code. Contact us: hello@lolitas.live
+          site is up to redeem your code.
           </p>
         </div>
         <div class=\"bottomleft\">
