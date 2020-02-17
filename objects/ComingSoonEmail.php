@@ -64,17 +64,60 @@ function handleSubmit() {
 
     // Check email exists
     if ($data != false) {
-      echo "<h1>EMAIL: " . $email . " already exists!</h1><p>We'll let you know when the
-      site is up to redeem your code. Contact us: hello@lolitas.live</p>";
+      echo
+      "
+      <html>
+      <head>
+        <link rel="stylesheet" type="text/css" href="view/css/comingsoon.css">
+      </head>
+      <body>
+      <div class="bgimg">
+        <div class="topleft">
+          <p>Lolitas LIVE</p>
+        </div>
+        <div class="middle">
+          <h1>Email: " . $email . " already exists!</h1>
+          <p>We'll let you know when the
+          site is up to redeem your code. Contact us: hello@lolitas.live
+          </p>
+        </div>
+        <div class="bottomleft">
+          <p>Contact us: hello@lolitas.live</p>
+        </div>
+      </div>
+      </body>
+      </html>
+      ";
     } else {
       $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
       . "(?, now(), now())";
       sqlDAL::writeSql($sql, "s", array(xss_esc($email)));
       //if email exists, create code and store against it
       assignCode($email);
-      echo "<h1>Thanks for registering, " . $email . "!</h1><p>You will receive
-      an email with a free credit code soon. We'll also let you know when the
-      site is up to redeem your code. Contact us: hello@lolitas.live";
+      echo
+      "
+      <html>
+      <head>
+        <link rel="stylesheet" type="text/css" href="view/css/comingsoon.css">
+      </head>
+      <body>
+      <div class="bgimg">
+        <div class="topleft">
+          <p>Lolitas LIVE</p>
+        </div>
+        <div class="middle">
+          <h1>Thanks for registering," . $email . "!</h1>
+          <p>You will receive
+          an email with a free credit code soon. We'll also let you know when the
+          site is up to redeem your code.</p>
+        </div>
+        <div class="bottomleft">
+          <p>Contact us: hello@lolitas.live</p>
+        </div>
+      </div>
+      </body>
+      </html>
+      ";
     }
   }
 }
