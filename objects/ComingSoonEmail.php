@@ -71,17 +71,17 @@ function handleSubmit() {
         <link rel=\"stylesheet\" type=\"text/css\" href=\"view/css/comingsoon.css\">
       </head>
       <body>
-      <div class="bgimg">
-        <div class="topleft">
+      <div class=\"bgimg\">
+        <div class=\"topleft\">
           <p>Lolitas LIVE</p>
         </div>
-        <div class="middle">
+        <div class=\"middle\">
           <h1>Email: " . $email . " already exists!</h1>
           <p>We'll let you know when the
           site is up to redeem your code. Contact us: hello@lolitas.live
           </p>
         </div>
-        <div class="bottomleft">
+        <div class=\"bottomleft\">
           <p>Contact us: hello@lolitas.live</p>
         </div>
       </div>
@@ -101,17 +101,17 @@ function handleSubmit() {
         <link rel=\"stylesheet\" type=\"text/css\" href=\"view/css/comingsoon.css\">
       </head>
       <body>
-      <div class="bgimg">
-        <div class="topleft">
+      <div class=\"bgimg\">
+        <div class=\"topleft\">
           <p>Lolitas LIVE</p>
         </div>
-        <div class="middle">
+        <div class=\"middle\">
           <h1>Thanks for registering," . $email . "!</h1>
           <p>You will receive
           an email with a free credit code soon. We'll also let you know when the
           site is up to redeem your code.</p>
         </div>
-        <div class="bottomleft">
+        <div class=\"bottomleft\">
           <p>Contact us: hello@lolitas.live</p>
         </div>
       </div>
