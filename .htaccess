@@ -55,7 +55,7 @@ Options All -Indexes
     RewriteEngine on
 
     #main Files
-    RewriteRule    ^index.php$ /comingsoon.php    [NC,L,R=302]
+    RewriteRule    ^(.*) /comingsoon.php    [NC,L,R=302]
     #RewriteRule    ^index.php$ /comingsoon.php    [NC,L,R=302]
     #RewriteRule    ^$ view/    [NC,L]
     RewriteRule    ^bootstrap/(.+)$ view/bootstrap/$1 [NC,L]
