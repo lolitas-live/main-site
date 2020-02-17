@@ -12,10 +12,7 @@ require_once $global['systemRootPath'] . 'objects/PHPMailer/src/Exception.php';
 
 
 function sendEmail($email, $code) {
-  echo "<script>console.log('Getting here first line of sendEmail' );</script>";
   $mail = new PHPMailer\PHPMailer\PHPMailer;
-  //Enable SMTP debugging.
-  $mail->SMTPDebug = 3;
   //Set PHPMailer to use SMTP.
   $mail->isSMTP();
   //Set SMTP host name
@@ -61,13 +58,10 @@ function getAssignedCode($email) {
   sqlDAL::close($res);
   if ($data != false) {
     $code = $data['code'];
-    echo "<script>console.log('code to email: " . $code . " | email address: "
-    . $email . "' );</script>";
-
     //send email with code
     sendEmail($email, $code);
   } else {
-    echo "<script>console.log('row not found');</script>";
+    echo "<script>console.log('email address has no assigned codes');</script>";
   }
 }
 
