@@ -68,7 +68,7 @@ function handleSubmit() {
       "
       <html>
       <head>
-        <link rel="stylesheet" type="text/css" href="view/css/comingsoon.css">
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"view/css/comingsoon.css\">
       </head>
       <body>
       <div class="bgimg">
@@ -98,7 +98,7 @@ function handleSubmit() {
       "
       <html>
       <head>
-        <link rel="stylesheet" type="text/css" href="view/css/comingsoon.css">
+        <link rel=\"stylesheet\" type=\"text/css\" href=\"view/css/comingsoon.css\">
       </head>
       <body>
       <div class="bgimg">
