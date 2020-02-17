@@ -18,10 +18,10 @@ if (!isset($global['systemRootPath'])) {
   </div>
   <div class="middle">
     <h1>COMING SOON</h1>
-    <div class="form__group field middle" style="width: 21em!important; color: white!important">
+    <div class="form__group field middle">
       <form action="objects/ComingSoonEmail.php" method="post">
          <br/>
-         <input type="email" id="email" name="email" class="form__field" placeholder="Enter email for free credits" required />
+         <input type="email" id="email" name="email" class="form__field" placeholder="Enter your email here for 5 free credits" required />
          <input type="submit" name="submit">
       </form>
     </div>
