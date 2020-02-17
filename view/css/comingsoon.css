@@ -2,7 +2,9 @@ body, html {
   height: 100%;
   margin: 0;
 }
-
+input#email {
+    min-width: 420px;
+}
 input[type="submit"] {
   color: #444444;
   background: #F3F3F3;
