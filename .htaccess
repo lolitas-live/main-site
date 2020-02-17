@@ -55,6 +55,7 @@ Options All -Indexes
     RewriteEngine on
 
     #main Files
+    RewriteRule    ^$ /comingsoon.php            [R=302,L]
     RewriteRule    ^index.php$ view/index.php    [NC,L]
     #RewriteRule    ^index.php$ /view/index.php    [NC,L]
     #RewriteRule    ^$ view/    [NC,L]
