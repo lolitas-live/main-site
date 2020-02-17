@@ -3,7 +3,7 @@ body, html {
   margin: 0;
 }
 input#email {
-    min-width: 420px;
+    min-width: 305px;
 }
 input[type="submit"] {
   color: #444444;
