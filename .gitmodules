@@ -1,0 +1,3 @@
+[submodule "AVideo-Encoder"]
+	path = AVideo-Encoder
+	url = https://github.com/WWBN/AVideo-Encoder.git
