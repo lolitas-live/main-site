@@ -5,7 +5,7 @@ if (!isset($global['systemRootPath'])) {
     require_once dirname(__FILE__) . '/../videos/configuration.php';
 }
 
-require_once $global['systemRootPath'] . 'objects/Vouchers.php';
+require_once $global['systemRootPath'] . 'objects/codeGenerator.php';
 require_once $global['systemRootPath'] . 'objects/PHPMailer/src/PHPMailer.php';
 require_once $global['systemRootPath'] . 'objects/PHPMailer/src/SMTP.php';
 require_once $global['systemRootPath'] . 'objects/PHPMailer/src/Exception.php';
@@ -13,8 +13,9 @@ require_once $global['systemRootPath'] . 'objects/PHPMailer/src/Exception.php';
 
 function sendEmail($email, $code) {
   $mail = new PHPMailer\PHPMailer\PHPMailer;
-  //Set PHPMailer to use SMTP.
+  // Set PHPMailer to use SMTP.
   $mail->isSMTP();
+  // Load SMTP Credentials
   setSiteSendMessage($mail);
   $mail->From = "hello@lolitas.live";
   $mail->FromName = "Lolitas Live";
