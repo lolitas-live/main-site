@@ -276,10 +276,10 @@ SimpleRouter::get($basePath . "login", function() {
 });
 
 // Translated!
-SimpleRouter::get($basePath . __("info"), function() {
-    require_once "view/info.php";
-    exit;
-});
+// SimpleRouter::get($basePath . __("info"), function() {
+//     require_once "view/info.php";
+//     exit;
+// });
 
 /*SimpleRouter::post($basePath . "subscribes.json", function() {
     require_once "objects/subscribe.json.php";
