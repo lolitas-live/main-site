@@ -110,7 +110,7 @@ require_once '../objects/functions.php';
                         }
                         $pathToPHPini= php_ini_loaded_file();
                         if(empty($pathToPHPini)){
-                            $pathToPHPini = "/usr/local/etc/php/7.3/php.ini";
+                            $pathToPHPini = "/etc/php/7.0/cli/php.ini";
                         }
                         ?>
 
