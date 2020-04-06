@@ -188,7 +188,7 @@ if (User::isAdmin()) {
                                 }
                                 $pathToPHPini = php_ini_loaded_file();
                                 if (empty($pathToPHPini)) {
-                                    $pathToPHPini = "/etc/php/7.0/cli/php.ini";
+                                    $pathToPHPini = "/usr/local/etc/php/7.3/php.ini";
                                 }
                                 ?>
 
@@ -392,7 +392,7 @@ if (User::isAdmin()) {
                                                                 <div class="alert alert-danger">
                                                                     the sitemap file must be writable
                                                                     <code>sudo chmod 777 <?php echo $sitemapFile; ?></code>
-                                                                </div>    
+                                                                </div>
                                                                 <?php
                                                             }
                                                             ?>
@@ -475,7 +475,7 @@ if (User::isAdmin()) {
                                                     <div class="alert alert-warning">
                                                         <h3>
                                                             <i class="fas fa-info-circle"></i>
-                                                            If you are not sure how to configure your email, 
+                                                            If you are not sure how to configure your email,
                                                             please try <a href="https://github.com/WWBN/AVideo/wiki/Setting-up-AVideo-Platform-to-send-emails" target="_blank">this help</a>
                                                         </h3>
                                                     </div>

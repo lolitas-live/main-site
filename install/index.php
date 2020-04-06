@@ -11,7 +11,7 @@ require_once '../objects/functions.php';
         <title>Install AVideo</title>
         <link rel="icon" href="../view/img/favicon.png">
         <link href="../view/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        
+
         <link href="../view/bootstrap/bootstrapSelectPicker/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
         <link href="../view/js/seetalert/sweetalert.css" rel="stylesheet" type="text/css"/>
         <script src="../view/js/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -38,7 +38,7 @@ require_once '../objects/functions.php';
                 <img src="../view/img/logo.png" alt="Logo" class="img img-responsive center-block"/>
                 <div class="row">
                     <div class="col-md-6">
-                        
+
                         <?php
                         if (isApache()) {
                             ?>
@@ -71,7 +71,7 @@ require_once '../objects/functions.php';
                             <div class="alert alert-warning">
                                 <span class="glyphicon glyphicon-exclamation-sign"></span>
                                 <strong>Your PHP version is <?php echo PHP_VERSION; ?>, we recommend install PHP 5.6.x or greater</strong>
-                            </div>                  
+                            </div>
                             <?php
                         }
                         ?>
@@ -110,7 +110,7 @@ require_once '../objects/functions.php';
                         }
                         $pathToPHPini= php_ini_loaded_file();
                         if(empty($pathToPHPini)){
-                            $pathToPHPini = "/etc/php/7.0/cli/php.ini";
+                            $pathToPHPini = "/usr/local/etc/php/7.3/php.ini";
                         }
                         ?>
 
