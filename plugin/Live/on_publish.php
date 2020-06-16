@@ -31,7 +31,7 @@ if (!empty($_GET['p'])) {
             $lth->setUsers_id($user->getBdId());
             $lth->save();
             $obj->error = false;
-            
+
         } else {
             _error_log("Stream Publish error, Password does not match");
         }
@@ -51,6 +51,6 @@ if (!empty($obj) && empty($obj->error)) {
     _error_log(print_r($_POST, true));
     _error_log(print_r($obj, true));
 }
-//_error_log(print_r($_POST, true));
-//_error_log(print_r($obj, true));
-//echo json_encode($obj);
+_error_log(print_r($_POST, true));
+_error_log(print_r($obj, true));
+echo json_encode($obj);
