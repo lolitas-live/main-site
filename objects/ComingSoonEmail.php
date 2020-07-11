@@ -58,6 +58,7 @@ function handleSubmit() {
   // Check if the form is submitted
   if (isset($_POST['submit'])) {
     $email = $_REQUEST['email'];
+    $ip = $_SERVER['REMOTE_ADDR'];
     $sql = "SELECT * FROM `coming_soon_email` WHERE email = '{$email}' ";
     $res = sqlDAL::readSql($sql);
     $data = sqlDAL::fetchAssoc($res);
@@ -91,9 +92,9 @@ function handleSubmit() {
       </html>
       ";
     } else {
-      $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`) VALUES "
+      $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`, `ip_address`) VALUES "
       . "(?, now(), now())";
-      sqlDAL::writeSql($sql, "s", array(xss_esc($email)));
+      sqlDAL::writeSql($sql, "s", array(xss_esc($email)), $ip);
       //if email exists, create code and store against it
       assignCode($email);
       echo
