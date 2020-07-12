@@ -62,11 +62,11 @@ function handleSubmit() {
     $sql = "SELECT * FROM `coming_soon_email` WHERE email = '{$email}' ";
     $res = sqlDAL::readSql($sql);
     $data = sqlDAL::fetchAssoc($res);
-    echo "<script>console.log(" . $data . ")</script>";
     sqlDAL::close($res);
 
     // Check email exists
     if ($data != false) {
+      echo "<script>console.log(" . $data . ")</script>";
       echo
       "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"../view/css/comingsoon.css\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"></head><body><div class=\"bgimg\"><div class=\"topleft\"><p>Lolitas LIVE</p></div><div class=\"middle\"><h1>Email: " . $email . " already exists!</h1><p>We'll let you know when thesite is up to redeem your code.</p></div><div class=\"bottomleft\"><p>Contact us: hello@lolitas.live</p></div></div></body></html>";
     } else {
