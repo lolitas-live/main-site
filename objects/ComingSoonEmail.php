@@ -75,7 +75,7 @@ function handleSubmit() {
       //if email exists, create code and store against it
       assignCode($email);
       echo
-      "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"../view/css/comingsoon.css\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"></head><body><div class=\"bgimg\"><div class=\"topleft\"><p>Lolitas LIVE</p></div><div class=\"middle\"><h1>Thanks for registering," . $email . "!</h1><p>You will receive an email with a free credit code soon. We'll also let you know when the site is up to redeem your code.</p></div><div class=\"bottomleft\"><p>Contact us: hello@lolitas.live</p></div></div></body></html>";
+      "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"../view/css/comingsoon.css\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"></head><body><div class=\"bgimg\"><div class=\"topleft\"><p>Lolitas LIVE</p></div><div class=\"middle\"><h1>Thanks for registering, " . $email . "!</h1><p>You will receive an email with a free credit code soon. We'll also let you know when the site is up to redeem your code.</p></div><div class=\"bottomleft\"><p>Contact us: hello@lolitas.live</p></div></div></body></html>";
     }
   }
 }
