@@ -70,6 +70,7 @@ function handleSubmit() {
       echo
       "<html><head><link rel=\"stylesheet\" type=\"text/css\" href=\"../view/css/comingsoon.css\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"></head><body><div class=\"bgimg\"><div class=\"topleft\"><p>Lolitas LIVE</p></div><div class=\"middle\"><h1>Email: " . $email . " already exists!</h1><p>We'll let you know when thesite is up to redeem your code.</p></div><div class=\"bottomleft\"><p>Contact us: hello@lolitas.live</p></div></div></body></html>";
     } else {
+      echo "<script>console.log(" . $data . ")</script>";
       $sql = "INSERT INTO `coming_soon_email` (`email`, `ip_address`, `created`, `modified`) VALUES "
       . "(?, ?, now(), now())";
       sqlDAL::writeSql($sql, "ss", array(xss_esc($email), xss_esc($ip)));
