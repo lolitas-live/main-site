@@ -2,6 +2,8 @@ body, html {
   height: 100%;
   margin: 0;
 }
+a { color: white; }
+a:hover { color: grey; }
 input#email {
     min-width: 305px;
 }
