@@ -62,6 +62,7 @@ function handleSubmit() {
     $sql = "SELECT * FROM `coming_soon_email` WHERE email = '{$email}' ";
     $res = sqlDAL::readSql($sql);
     $data = sqlDAL::fetchAssoc($res);
+    echo "<script>console.log('{$data}')</script>";
     sqlDAL::close($res);
 
     // Check email exists
