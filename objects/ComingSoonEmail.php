@@ -43,7 +43,7 @@ function getAssignedCode($email) {
   $res = sqlDAL::readSql($sql);
   $data = sqlDAL::fetchAssoc($res);
   sqlDAL::close($res);
-  if ($data != false) {
+  if ($data != false) {Ω
     $code = $data['code'];
     //send email with code
     sendEmail($email, $code);
