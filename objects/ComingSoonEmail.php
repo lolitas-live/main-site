@@ -43,7 +43,7 @@ function getAssignedCode($email) {
   $res = sqlDAL::readSql($sql);
   $data = sqlDAL::fetchAssoc($res);
   sqlDAL::close($res);
-  if ($data != false) {Ω
+  if ($data != false) {
     $code = $data['code'];
     //send email with code
     sendEmail($email, $code);
@@ -71,7 +71,7 @@ function handleSubmit() {
     } else {
       $sql = "INSERT INTO `coming_soon_email` (`email`, `created`, `modified`, `ip_address`) VALUES "
       . "(?, now(), now())";
-      sqlDAL::writeSql($sql, "s", array(xss_esc($email)), $ip);
+      sqlDAL::writeSql($sql, "ss", array(xss_esc($email), $ip));
       //if email exists, create code and store against it
       assignCode($email);
       echo
