@@ -1,4 +1,4 @@
 steps:
   - name: gcr.io/cloud-builders/git
-    # dir: /var/www/html
-    args: [ 'git fetch', 'git merge origin/master']
+    dir: /var/www/html
+    args: [ 'git pull --rebase']
