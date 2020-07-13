@@ -1,5 +1,5 @@
 steps:
-- name: 'namejuan'
+- name: 'ubuntu'
   entrypoint: 'bash'
   args: ['cd', '/var/www/html']
 
