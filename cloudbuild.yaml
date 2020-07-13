@@ -1,4 +1,6 @@
 steps:
+  - name: gcr.io/cloud-builders/gcloud
+    entrypoint: 'bash'
+    args: ['cd /var/www/html']
   - name: gcr.io/cloud-builders/git
-    dir: /var/www/html
     args: ['fetch', 'merge origin/master']
