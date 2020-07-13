@@ -1,5 +1,4 @@
 name: gcr.io/cloud-builders/git
-  entrypoint: /bin/bash
   dir: /var/www/html
   args:
   - git fetch origin master
