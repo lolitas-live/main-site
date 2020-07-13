@@ -1,5 +1,4 @@
-name: gcr.io/cloud-builders/git
-  dir: /var/www/html
-  args:
-  - git fetch origin master
-    git merge origin/master
+steps:
+  - name: gcr.io/cloud-builders/git
+    # dir: /var/www/html
+    args: [ 'git fetch origin master', 'git merge origin/master']
